@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Nama dan Umur</title>
+</head>
+<body>
+    <h1>Validasi Nama dan Umur</h1>
+    <h3>Masukkan nama dan umur anda</h3>
+    <label for="nama">Masukkan Nama:</label>
+    <input type="text" id="nama"> <br> <br>
+    <label for="umur">Masukkan Umur:</label>
+    <input type="number" id="umur"> <br> <br>
+    <button onclick="checkInput()">Validasi</button>
+    <p id="error"> </p> 
+    <p id="result" align="center"> </p>
+    <br> <br>
+    <h5 style="color:blue;" align="right">Dionysius Swedha <br> 21/474007/TK/52270</h5>
+
+    <script>
+        function checkInput() {
+            const namaElement = document.getElementById("nama");
+            const umurElement = document.getElementById("umur");
+            const errorElement = document.getElementById("error");
+            const resultElement = document.getElementById("result");
+            const nama = namaElement.value;
+            const umur = parseInt(umurElement.value);
+
+            errorElement.textContent = ""; 
+            resultElement.textContent = ""; 
+
+			if (nama === "") {
+                alert("Nama dan Umur Wajib Diisi!");
+				return;
+			} else if (umur === "") {
+				alert("Nama dan Umur Wajib Diisi!");
+                return;
+			}
+			
+            if (umur < 0 || umur == 0) {
+                resultElement.textContent = "Anda Game Over";
+            } else if (umur <= 5) {
+                resultElement.textContent = "Anda Masih Bayi";
+            } else if (umur >=6 && umur <= 15) {
+                resultElement.textContent = "Anda Masih Anak-Anak";
+            } else if (umur >= 16 && umur <= 30) {
+                resultElement.textContent = "Anda Masih Remaja";
+            } else if (umur >= 31 && umur <= 60) {
+                resultElement.textContent = "Anda Sudah Dewasa";
+            } else if (umur >= 61) {
+                resultElement.textContent = "Anda Sudah Tua";
+            } 
+        }
+    </script>
+</body>
+</html>

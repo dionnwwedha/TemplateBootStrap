@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menampilkan Bilangan Fibonacci</title>
+</head>
+<body>
+	<h1>Bilangan Fibonacci</h1>
+	<p>Masukkan angka yang ingin diketahui seberapa banyak bilangan fibonacci:</p>
+	Input Angka : <input type="text" id="txtloop"/> <br> <br>
+	<input type="button" id="btnEnter" value="Mulai"
+	onclick="bilangan_fibonacci(txtloop.value)"/> <br>
+	<br> Hasil : <span id="hasil"></span> 
+	<br> <br>
+	<h5 style="color:blue;" align="right">Dionysius Swedha <br> 21/474007/TK/52270</h5>
+ 
+<script>
+	var bilangan_fibonacci = function (n)
+	{
+		if (n==1) {
+		var loop = [0,1];
+		return loop;
+    }
+		else{
+		var bil = bilangan_fibonacci(n-1);
+		bil.push(bil[bil.length - 1] + bil[bil.length - 2]);
+		document.getElementById("hasil").innerHTML = bil;
+	return bil;
+    }
+}
+</script>
+
+</body>
+</html>

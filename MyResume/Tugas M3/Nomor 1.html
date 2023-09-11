@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Hitung Faktorial</title>
+</head>
+<body>
+    <h2> Hitung faktorial dari input </h2>
+    <h3> Masukkan sembarang angka </h3>
+    <div id="datainput" style="float: left;">
+    <input type="text" id="angka"/>
+    <button onclick="fact()">CLICK</button>
+    </div>
+    <br>
+    <p id="hasil"></p>
+	<br>
+	<h5 style="color:blue;" align="right">Dionysius Swedha <br> 21/474007/TK/52270</h5>
+    <script>
+        function fact(){
+                var i, num, f;
+                f = 1;
+                num = document.getElementById("angka").value;
+
+                for(i = 1; i <= num; i++) {
+                    f = f * i;
+                }
+                document.getElementById("hasil").innerHTML = "Angka Faktorial Dari " + num + " Adalah : " + f ;
+            }
+	</script>
+<p id="hasil"></p>
+
+</body>
+</html>

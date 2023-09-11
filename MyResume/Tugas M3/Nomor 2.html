@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Validasi Input</title>
+</head>
+<body>
+    <h1>Validasi Input Password</h1>
+    <h3>Masukkan nama, password, dan alamat email anda!</h3>
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password">
+    <br>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email">
+    <br>
+	<br>
+    <button onclick="checkPassword()">Click</button>
+    <p id="error" align="center"></p>
+    <br>
+    <br>
+    <h5 style="color:blue;" align="right">Dionysius Swedha<br> 21/474007/TK/52270</h5>
+
+    <script>
+        function checkPassword() {
+            const namaElement = document.getElementById("nama");
+            const emailElement = document.getElementById("email");
+            const passwordElement = document.getElementById("password");
+            const errorElement = document.getElementById("error");
+            const nama = namaElement.value;
+            const email = emailElement.value;
+            const password = passwordElement.value;
+
+            if (email === "" || nama ==="") {
+				errorElement.textContent = "Nama dan Email Belum Diisi!";
+                alert("Nama dan Email Belum Diisi!")
+			} else if (password === "sss") {
+                errorElement.textContent = "Password Benar. Halo User :)"; 
+                alert("Password Benar. Halo User :)")
+            } else {
+                errorElement.textContent = "Password salah. Akses ditolak!";
+                alert("Password salah. Akses ditolak!")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menampilkan Bilangan Prima</title>
+</head>
+<body>
+	<h1>Bilangan Prima</h1>
+	<p>Masukkan angka yang ingin diketahui seberapa banyak bilangan prima:</p> 
+	Input Angka : <input type="text" id="input"> <br> <br>
+	<button type="button"
+	onclick="CalcPrime()">Mulai</button><br/>
+	<br> Hasil	: <span id="hasil"></span>
+	<br> <br>
+	<h5 style="color:blue;" align="right">Dionysius Swedha <br> 21/474007/TK/52270</h5>
+
+<script>
+	function CalcPrime() {
+	var a = document.getElementById("input").value;
+	document.getElementById("hasil").textContent = "";
+    if (a>=0) {
+    for(i=2;i<=a;i++){
+    var jawab= false;
+    	for(j=2;j<i;j++){
+        	if(i%j==0)
+            jawab=true
+	}
+    if(!jawab){
+   	if(i>2){
+    document.getElementById("hasil").innerHTML+=", ";
+	}
+	document.getElementById("hasil").innerHTML+=i;
+	}
+					}  
+			}
+	}
+</script>
+
+</body>
+</html>
