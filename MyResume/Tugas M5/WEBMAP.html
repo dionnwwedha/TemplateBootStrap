@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Leaflet Web Map </title>
+    <link rel="stylesheet" href="leaflet/leaflet.css"/>
+    <script src="leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
+    <link rel = "icon" href = "LOGOUGM.png" 
+    type = "image/x-icon">
+    <style>
+        body {
+        padding: 0;
+        margin: 0;
+        }
+        html, body, #map {
+        height: 100%;
+        width: 100%;
+        }
+        .leaflet-popup-content {
+        max-width: 200px;
+        height: 100px;
+        overflow-y: scroll;
+        }
+        .site-header {
+        background-color: #EBE4D1;
+        width: 100%;
+        }
+        .site-header h1 {
+        margin: 0;
+        padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+    <h1>Peta Rute Kost Ke Departemen di FT UGM</h1>
+    </header>
+    <div id="map"></div>
+    <script>
+    var map = L.map('map',{
+        center: [-7.76476,110.37243],
+        zoom: 20
+    });
+    
+    L.Routing.control({
+        waypoints: [
+        L.latLng([-7.75896,110.37810]),
+        L.latLng([-7.76388,110.37280]),
+        ],
+            lineOptions: {
+                styles: [{ color: 'green', opacity: 1, weight: 3 }]
+            },
+            collapsible: true,
+            show: false,
+        }).addTo(map) 
+    
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
+        attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>contributors'
+    }).addTo(map); 
+
+    var marker =[] 
+    marker[0] = L.marker([-7.76388,110.37280],{
+        title: "DTGD"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Geodesi FT UGM</h3> <p>Pada awal berdirinya yaitu pada bulan Agustus tahun 1959, DTGD masih merupakan program studi gabungan dengan program studi Teknik Geologi.</p> <img src ="./foto/TeknikGeodesi.jpeg" style="width:150px">')
+    marker[1] = L.marker([-7.76400,110.37313],{
+        title: "DTSL"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Sipil dan Lingkungan FT UGM</h3> <p>Departemen Teknik Sipil dan Lingkungan (DTSL), Fakultas Teknik, Universitas Gadjah Mada lahir bersama-sama dengan Fakultas Teknik UGM dalam kancah revolusi perjuangan pendirian negara Indonesia.</p> <img src ="./foto/TeknikSipil.jpg" style="width:150px">')    
+    marker[2] = L.marker([-7.76399,110.37156],{
+        title: "DTAP"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Arsitektur dan Perencanaan FT UGM</h3> <p>Departemen Arsitektur dan Perencanaan terdiri dari 2 program studi sarjana yaitu Program Sarjana Arsitektur dan Program Sarjana Perencanaan Kota dan Wilayah.</p> <img src ="./foto/DTAP.jpg" style="width:150px">')    
+    marker[3] = L.marker([-7.76517,110.37131],{
+        title: "DTK"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Kimia FT UGM</h3> <p>Departemen Teknik Kimia FT-UGM adalah salah satu Departemen Teknik Kimia yang terbaik di Indonesia terbukti dengan akreditasi A dari BAN.</p> <img src ="./foto/DTK.jpg" style="width:150px">')    
+    marker[4] = L.marker([-7.76594,110.37316],{
+        title: "DTGL"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Geologi FT UGM</h3> <p>Departemen Teknik Geologi didirikan pada bulan Agustus 1959 sebagai bagian di Fakultas Teknik UGM yang berupa gabungan bagian Geodesi dan Geologi.</p> <img src ="./foto/DTGL.jpg" style="width:150px">')    
+    marker[5] = L.marker([-7.76625,110.37282],{
+        title: "DTNTF"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Nuklir dan Teknik Fisika FT UGM</h3> <p>Terdiri daeri 2 program studi sarjana, Teknik Nuklir dan Teknik Fisika</p> <img src ="./foto/DTNTF.jpg" style="width:150px">')    
+    marker[6] = L.marker([-7.76576,110.37087],{
+        title: "DTMI"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Mesin dan Industri FT UGM</h3> <p>DTMI FT UGM merupakan departemen yang bereputasi di tingkat nasional dan mempunyai Program Studi Sarjana, Magister dan Doktor di bidang Teknik Mesin dan Teknik Industri. </p> <img src ="./foto/DTMI.jpg" style="width:150px">')   
+    marker[7] = L.marker([-7.76588,110.37177],{
+        title: "DTETI"
+    }).addTo(map).bindPopup(
+        '<h3> Departemen Teknik Elektro dan Teknologi Informasi FT UGM</h3> <p>Terdapat 3 program studi sarjana, yaitu: Teknik Elektro, Teknologi Informasi, Teknologi Biomedis</p> <img src ="./foto/DTETI.jpg" style="width:150px">')
+    marker[8] = L.marker([-7.75896,110.37810],{
+        title: "Kost Wedha"
+    }).addTo(map).bindPopup(
+        '<h3>Kost Pogung Baru E12A</h3>') 
+    
+    </script> 
+</body>
+</html>
